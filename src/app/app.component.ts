@@ -93,7 +93,7 @@ export class AppComponent implements AfterViewInit {
         events: {
           [EVENT_TAP]: (params) => {
             // if zero nodes currently selected, or the shift key wasnt pressed, make this node the only one in the selection.
-            if (this.toolkit.getSelection()._nodes.length < 1 || params.e.shiftKey !== true) {
+            if (this.toolkit.getSelection().getNodes().length < 1 || params.e.shiftKey !== true) {
               this.toolkit.setSelection(params.obj)
             } else {
               // if multiple nodes already selected, or shift was pressed, add this node to the current selection.
